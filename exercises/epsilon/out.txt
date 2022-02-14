@@ -1,2 +1,4 @@
 Maximum representable integer is 2147483647
 int.MaxValue is 2147483647
+Minimum representable integer is -2147483648
+int.MinValue is -2147483648
