@@ -1,0 +1,6 @@
+sqrt(2) = 1.4142135623731
+Test of sqrt(2): 2 = 2
+e^pi = 23.1406926327793
+test for e^pi: 1 = 1
+pi^e = 22.459157718361
+test for pi^e: 1 = 1
