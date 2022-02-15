@@ -36,5 +36,16 @@ class epsilon{
 			Tiny is less than epsilon and as such 1 + tiny = 1. 
 			This should be obvious from the way we constructed epsilon
 		*/
+		WriteLine($"approx virker, hvis approx(1,1) = {approx(1,1)} og approx(1,2) = {approx(1,2)}");
+	}
+	static bool approx(double a, double b, double tau=1e-9, double epsilon=1e-9){
+		double diff = Abs(a - b);
+		double reldiff = diff/(Abs(a) + Abs(b));
+		if (diff < tau)
+			return true;
+		else if (reldiff < epsilon)
+			return true;
+		else
+			return false;
 	}
 }
