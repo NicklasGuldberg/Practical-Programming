@@ -1,11 +1,11 @@
-out.txt : vec.exe
-	mono vec.exe > out.txt
+Out.txt : main.exe
+	mono main.exe #> Out.txt   #Comment before > to make the output go to terminal instead of Out.txt
 
-vec.exe : vec.cs
-	mcs vec.cs
+main.exe : main.cs vec.dll
+	mcs main.cs -reference:vec.dll
 
+vec.dll : vec.cs
+	mcs -target:library vec.cs
+	
 clean:
-	rm -f out.txt vec.exe
-
-run:
-	mono vec.exe
+	rm -f Out.txt main.exe vec.dll
