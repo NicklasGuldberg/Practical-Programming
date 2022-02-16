@@ -11,5 +11,10 @@ public class vec{
         x=a; y=b; z=c;
     }
 
-    
+    //operators:
+    public static vec operator*(vec v, double c){return new vec(c*v.x,c*v.y,c*v.z);}
+    public static vec operator*(double c, vec v){return v*c;}
+    public static vec operator+(vec u, vec v){/*...*/}
+    public static vec operator-(vec u, vec v){/*...*/}
+    public static vec operator-(vec u){/*...*/}
 }
