@@ -64,4 +64,10 @@ public static complex pow (this complex a, double x){
 public static complex pow (this complex a, complex b){
 	return exp(b*log(a)); }
 
+//sinh and cosh
+public static double sinh(double x){return Math.Sinh(x);}
+public static complex sinh(complex z){return sin(I*z);}
+public static double cosh(double x){return Math.Cosh(x);}
+public static complex cosh(complex z){return cos(I*z);}
+
 }// cmath
