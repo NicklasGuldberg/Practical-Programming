@@ -14,6 +14,8 @@ class main{
         complex e = I.pow(I);
         complex f = log(I);
         complex g = sin(I*PI);
+        complex h = sinh(I);
+        complex i = cosh(I);
         WriteLine($"sqrt(-1) = {a}");
         WriteLine($"i = {a} is {a.approx(I)}");
         WriteLine($"sqrt(i) = {b}");
@@ -23,7 +25,8 @@ class main{
         WriteLine($"i^i = {e}");
         WriteLine($"log(i) = {f}");
         WriteLine($"sin(i*pi) = {g}");
-
+        WriteLine($"sinh(i) = {h}");
+        WriteLine($"cosh(i) = {i}");
 
     }
 }
