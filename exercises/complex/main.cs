@@ -3,6 +3,6 @@ using static System.Console;
 using static System.Math;
 class main{
     static void Main(){
-        WriteLine("Test");
+        WriteLine("Test 2");
     }
 }
