@@ -1,5 +1,5 @@
 Out.txt : main.exe
-	mono main.exe #> Out.txt   #Comment before > to make the output go to terminal instead of Out.txt
+	mono main.exe > Out.txt   #Comment before > to make the output go to terminal instead of Out.txt
 
 main.exe : main.cs vec.dll
 	mcs main.cs -reference:vec.dll
