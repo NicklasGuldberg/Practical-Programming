@@ -3,7 +3,6 @@ using static System.Math;
 using static System.Console;
 class stdin{
         static void Main(){
-                //test
                 char[] delimiters = {' ','\t','\n',','};
                 var options = StringSplitOptions.RemoveEmptyEntries; 
                 for(string line = ReadLine(); line != null; line = ReadLine()){              
