@@ -1,7 +1,7 @@
 input = 1 2 3 4 5
 
 out.txt : C
-	cat out.txt
+	#cat out.txt
 
 A : stdin.exe
 	echo $(input) | mono stdin.exe > out.txt
