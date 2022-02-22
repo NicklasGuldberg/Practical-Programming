@@ -13,7 +13,7 @@ class fileio{
         }
         var Reader = new System.IO.StreamReader(infile);
         var Writer = new System.IO.StreamWriter(outfile);
-        char[] delimiters = {' ','\t','\n',','};
+        char[] delimiters = {' ','\t','\n',','}; //Decided to include other delimiters than only newlines
         var options = StringSplitOptions.RemoveEmptyEntries;
         for (string line = Reader.ReadLine(); line != null; line = Reader.ReadLine()){
             var words = line.Split(delimiters,options);
