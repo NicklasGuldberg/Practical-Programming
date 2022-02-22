@@ -27,7 +27,7 @@ class fileio{
                     }
                 }
         }
-        //Reader.Close(); //Not necessary
+        Reader.Close(); //Not necessary
         //Writer.Flush(); //This works just as well
         Writer.Close();
     }
