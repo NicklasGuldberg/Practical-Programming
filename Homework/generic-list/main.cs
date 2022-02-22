@@ -10,11 +10,13 @@ class main{
         for(string line = ReadLine(); line != null; line = ReadLine()){              
             var words = line.Split(delimiters,options);
             double[] numbers = Array.ConvertAll(words, double.Parse);
-            list.push(numbers); //list.data is now a 2d array with numbers being each row.
+            list.push(numbers); //list.data is now a jagged array.
         }
-        for(int i = 0; i<list.size; i++){
-            foreach(var number in list.data[i]){
-                Write($"{number:e} \t");
+        foreach(var row in list.data){ 
+        /*foreach works here because it is a jagged array and not a 2d-array. 
+        two for-loops (or one of each) works as well*/
+            foreach(var number in row){
+                Write($"{number} \t");
             }
             Write("\n");
         }
