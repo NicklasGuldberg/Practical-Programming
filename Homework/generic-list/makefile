@@ -1,5 +1,6 @@
 out.txt : main.exe
 	cat input.txt | mono main.exe > out.txt
+	cat out.txt
 
 main.exe : main.cs genlist.dll
 	mcs -reference:genlist.dll main.cs
