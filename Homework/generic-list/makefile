@@ -9,4 +9,4 @@ genlist.dll : genlist.cs
 	mcs -target:library genlist.cs
 
 clean : 
-	rm -f *.exe out.txt
+	rm -f *.exe out.txt *.dll
