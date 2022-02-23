@@ -8,12 +8,34 @@ Thus if the type is array, we would get an array of arrays
 */
 public class genlist<T>{
     public T[] data; 
-    public int size {get{return data.Length;}} //get makes the size property read-only. 
-	public genlist(){data = new T[0]; } //constructor
+    
+    private int capacity = 8;
+    private int size = 0;
+    public int Size {get{return size;}} //get makes the size property read-only.
+    public int Capacity {get{return capacity;}}
+    
+    //public int size = 0, capacity= 8;
+    public genlist(){data = new T[capacity]; } //constructor
 	public void push(T item){ //push method appends an entry to the list. Entries can be arrays. 
-		T[] newdata = new T[size+1];
-		for(int i=0;i<size;i++)newdata[i]=data[i];
-		newdata[size]=item;
-		data=newdata;
+		if(size == capacity){
+            T[] newdata = new T[capacity*=2];
+            for(int i=0;i<size;i++)newdata[i]=data[i];
+            data=newdata;
+        }
+        data[size] = item;
+        size++;
 	}
+    public void remove(int i){
+        //For loops copies all entries except the i'th. 
+        T[] newdata = new T[capacity];
+        if (i>size) WriteLine($"Error: No #{i} entry in list");
+        for(int j=0;j<i;j++){
+            newdata[j] = data[j];
+        }
+        for(int j=i+1;j<size;j++){
+            newdata[j-1] = data[j];
+        }
+        data = newdata;
+        size--;
+    }
 }
