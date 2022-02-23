@@ -26,7 +26,8 @@ public class genlist<T>{
         size++;
 	}
     public void remove(int i){
-        //For loops copies all entries except the i'th. 
+        //For loops copies all entries except the i'th.
+        //The index i use same convention as arrays (starts at 0).
         T[] newdata = new T[capacity];
         if (i>size) WriteLine($"Error: No #{i} entry in list");
         for(int j=0;j<i;j++){
