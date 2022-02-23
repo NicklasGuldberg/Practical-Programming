@@ -11,13 +11,27 @@ class main{
             var words = line.Split(delimiters,options);
             double[] numbers = Array.ConvertAll(words, double.Parse);
             list.push(numbers); //list.data is now a jagged array.
+            //WriteLine($"Current size of list is {list.Size}"); 
+            //WriteLine($"Current capacity of list is {list.Capacity}");
         }
+        /*
         foreach(var row in list.data){ 
-        /*foreach works here because it is a jagged array and not a 2d-array. 
-        two for-loops (or one of each) works as well*/
+        //foreach works here because it is a jagged array and not a 2d-array. Two for-loops (or one of each) works as well
+        //This gives an ugly unhandled exception after using capacity in genlist.cs
             foreach(var number in row){
                 Write($"{number} \t");
             }
+            Write("\n");
+        }
+        */
+        WriteLine($"{list.Size}");
+        list.remove(3);
+        list.remove(1);
+        WriteLine($"{list.Size}");
+
+        for(int i=0; i<list.Size; i++){
+            var row = list.data[i];
+            foreach(var number in row) Write($"{number} \t");
             Write("\n");
         }
     }
