@@ -24,11 +24,7 @@ class main{
             Write("\n");
         }
         */
-        WriteLine($"{list.Size}");
-        list.remove(3);
-        list.remove(1);
-        WriteLine($"{list.Size}");
-
+        
         for(int i=0; i<list.Size; i++){
             var row = list.data[i];
             foreach(var number in row) Write($"{number} \t");
