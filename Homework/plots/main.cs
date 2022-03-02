@@ -15,7 +15,7 @@ class main{
     
     static double gamma(double x){
         ///single precision gamma function (Gergo Nemes, from Wikipedia)
-        if(x<0)return PI/sin(PI*x)/gamma(1-x);
+        if(x<0)return PI/Sin(PI*x)/gamma(1-x);
         if(x<9)return gamma(x+1)/x;
         double lngamma=x*Log(x+1/(12*x-1/x/10))-x+Log(2*PI/x)/2;
         return Exp(lngamma);
@@ -59,8 +59,27 @@ class main{
         //Prints the tabulated data in desired range to erf.tabdata.txt
         var Writer = new System.IO.StreamWriter("erf.tabdata.txt");
         for (int i= 0; i<table.GetLength(0); i++){
-            if (table[i,0] > xmin & table[i,0] < xmax) Writer.WriteLine($"{table[i,0]}\t {table[i,1]}\t {table[i,2]}");
+            if (table[i,0] > xmin & table[i,0] < xmax) Writer.WriteLine($"{table[i,0]},{table[i,1]},{table[i,2]}");
         }  
         Writer.Close();
+
+        //Does the same for Gamma function
+        var GammaDataWriter = new System.IO.StreamWriter("gamma.data.txt");
+        double gammaxmin = 0.1; //Everything breaks if this is 0.
+        double gammaxmax =5;
+        double gammaincrement = 1.0/20;
+        for(double x=gammaxmin; x<=gammaxmax; x+=gammaincrement)
+            GammaDataWriter.WriteLine($"{x}, {gamma(x)}");
+        GammaDataWriter.Close();
+        
+        //I could not find tabulated values for the gamme functions so i print the values for integers instead.
+        var GammaTabWriter = new System.IO.StreamWriter("gamma.tabdata.txt");
+        for (var i=Ceiling(gammaxmin); i<gammaxmax; i+=1){
+            int fact = 1;
+            for (int n=1; n<= i-1; n++) fact *= n;
+            GammaTabWriter.WriteLine($"{i}, {fact}");
+        }
+        GammaTabWriter.Close();
+        
     }
 }
