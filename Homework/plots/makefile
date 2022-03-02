@@ -14,7 +14,7 @@ erf.data.txt gamma.data.txt &: main.exe
 	mcs $<
 
 clean:
-	rm -f erf.data.txt gamma.data.txt *.exe *.png
+	rm -f erf.data.txt gamma.data.txt erf.tabdata.txt gamma.tabdata.txt *.exe *.png
 
 test: main.exe
 	mono main.exe
