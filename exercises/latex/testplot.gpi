@@ -1,0 +1,8 @@
+set terminal pdf
+set output 'testplot.pdf'
+set key left
+set xlabel '$x$'
+set logscale y
+set ylabel '$y \, [\log]$'
+plot [-100:100][:] 'out.txt' with points title '$\mathrm{ex} (x)$'
+replot exp(x)
