@@ -4,4 +4,5 @@ set key left
 set grid
 set xtics 1
 set ytics 0.25
+set axis x atzero
 plot 'erf.data.txt' using 1:2 with lines title '$\mathrm{erf}(x)$'
