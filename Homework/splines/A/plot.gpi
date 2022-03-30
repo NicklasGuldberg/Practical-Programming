@@ -1,0 +1,10 @@
+set terminal png
+set output 'plot.png'
+set key bottom
+
+plot 'out.txt' using 1:2 with lines title "Linear Interpolation"
+replot 'orgfunc.txt' using 1:2 with lines title "$\sin (x)$"
+replot 'out.txt' using 1:3 with lines title "Integral of linear interpolation" 
+replot [0:2.75] 'Points.txt' using 1:2 with points title "Points used for interpolation"
+
+
