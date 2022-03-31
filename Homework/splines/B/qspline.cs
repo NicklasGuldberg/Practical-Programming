@@ -57,8 +57,13 @@ public class qspline{
         double sdot_i = b[i] + 2*c[i] * (z - x[i]);
         return sdot_i;
     }
-	// public double integral(double z){
-    //     int i = binsearch(x,z);
-    //     double sdot_i = 
-    // }
+	public double integral(double z){
+        int i = binsearch(x,z);
+        double sint = 0;
+        for(int j = 0; j<i; ++j){
+            sint += y[i] * dx[i] + 0.5 * b[i] * dx[i] * dx[i] + 1.0/3 * c[i] * Pow(dx[i],3);
+        }
+        sint += y[i] * (z- x[i]) + 0.5 * b[i] * (z - x[i]) * (z - x[i])  + 1.0/3 * c[i] * (z - x[i])*(z - x[i])*(z - x[i]);
+        return sint;
+    }
 }
