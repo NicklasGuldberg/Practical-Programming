@@ -47,6 +47,7 @@ public class qspline{
 	}
 
 	public double spline(double z){
+        //This is just the spline function. It is important that z is restricted to x[0] < z < x[n]
         int i = binsearch(x,z);
         double s_i = y[i] + b[i] * (z - x[i]) + c[i] * (z - x[i])*(z - x[i]);
         return s_i;
