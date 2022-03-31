@@ -64,20 +64,20 @@ public class cspline{
         double s_i = y[i] + b[i] * (z - x[i]) + c[i] * (z-x[i])*(z-x[i]) + d[i] * Pow((z-x[i]), 3); 
         return s_i;
     }
-    /*
+    
 	public double derivative(double z){
         int i = binsearch(x,z);
-        double sdot_i = 
+        double sdot_i = b[i] + 2 * c[i] * (z - x[i]) + 3 * d[i] * (z - x[i])*(z - x[i]);
         return sdot_i;
     }
+    
 	public double integral(double z){
         int i = binsearch(x,z);
         double sint = 0;
         for(int j = 0; j<i; ++j){
-            sint += 
+            sint += y[j] * dx[j] + 1.0/2 * b[j] * dx[j] * dx[j] + 1.0/3 * c[j] * Pow(dx[j],3) +  1.0/4 * d[j] * Pow(dx[j],4);
         }
-        sint +=
+        sint += y[i] * (z - x[i]) + 1.0/2 * b[i] * (z - x[i]) * (z - x[i]) + 1.0/3 * c[i] * Pow((z - x[i]),3) +  1.0/4 * d[i] * Pow((z - x[i]),4);
         return sint;
     }
-    */
 }

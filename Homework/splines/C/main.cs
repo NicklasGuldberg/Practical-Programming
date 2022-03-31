@@ -13,7 +13,7 @@ class main{
         var y = new double[n];
         for(int i=0; i<n; i++){
             x[i] = xmin + i/Convert.ToDouble(n) * (xmax - xmin);
-            y[i] = rnd.Next(0,10);
+            y[i] = rnd.Next(-1,2);
             WriteLine($"{x[i]} {y[i]}");
         }
         WriteLine();
@@ -24,20 +24,18 @@ class main{
         for(double i = cs.x[0]; i<cs.x[cs.n-1]; i += 0.01){
             WriteLine($"{i} {cs.spline(i)}");
         }
-        /*
+        
         WriteLine();
         WriteLine();
 
-        for(double i = qs.x[0]; i<qs.x[qs.n-1]; i += 0.01){
-            WriteLine($"{i} {qs.derivative(i)}");
+        for(double i = cs.x[0]; i<cs.x[cs.n-1]; i += 0.01){
+            WriteLine($"{i} {cs.derivative(i)}");
         }
-
         WriteLine();
         WriteLine();
 
-        for(double i = qs.x[0]; i<qs.x[qs.n-1]; i += 0.01){
-            WriteLine($"{i} {qs.integral(i)}");
+        for(double i = cs.x[0]; i<cs.x[cs.n-1]; i += 0.01){
+            WriteLine($"{i} {cs.integral(i)}");
         }
-        */
     }
 }

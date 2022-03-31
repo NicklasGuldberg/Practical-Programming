@@ -5,7 +5,7 @@ plot.png : out.txt plot.gpi
 
 out.txt : main.exe
 	mono main.exe > $@
-	cat out.txt
+	# cat out.txt
 
 main.exe: main.cs matlib.dll
 	mcs -reference:matlib.dll main.cs
