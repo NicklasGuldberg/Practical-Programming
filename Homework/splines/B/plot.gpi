@@ -1,0 +1,7 @@
+set terminal png
+set output 'plot.png'
+set key below
+
+plot 'out.txt' index 0 using 1:2 with points title "Points"
+replot 'out.txt' index 1 using 1:2 with lines title "Quadratic Spline"
+
