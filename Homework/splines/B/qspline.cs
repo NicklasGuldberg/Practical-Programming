@@ -61,9 +61,9 @@ public class qspline{
         int i = binsearch(x,z);
         double sint = 0;
         for(int j = 0; j<i; ++j){
-            sint += y[i] * dx[i] + 0.5 * b[i] * dx[i] * dx[i] + 1.0/3 * c[i] * Pow(dx[i],3);
+            sint += y[j] * dx[j] + 0.5 * b[j] * dx[j] * dx[j] + 1.0/3.0 * c[j] * Pow(dx[j],3);
         }
-        sint += y[i] * (z- x[i]) + 0.5 * b[i] * (z - x[i]) * (z - x[i])  + 1.0/3 * c[i] * (z - x[i])*(z - x[i])*(z - x[i]);
+        sint += y[i] * (z- x[i]) + 0.5 * b[i] * (z - x[i]) * (z - x[i])  + 1.0/3.0 * c[i] * (z - x[i])*(z - x[i])*(z - x[i]);
         return sint;
     }
 }
