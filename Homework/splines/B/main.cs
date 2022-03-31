@@ -23,5 +23,12 @@ class main{
         for(double i = qs.x[0]; i<qs.x[qs.n-1]; i += 0.01){
             WriteLine($"{i} {qs.spline(i)}");
         }
+
+        WriteLine();
+        WriteLine();
+
+        for(double i = qs.x[0]; i<qs.x[qs.n-1]; i += 0.01){
+            WriteLine($"{i} {qs.derivative(i)}");
+        }
     }
 }

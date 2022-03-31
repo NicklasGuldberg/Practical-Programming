@@ -52,6 +52,13 @@ public class qspline{
         double s_i = y[i] + b[i] * (z - x[i]) + c[i] * (z - x[i])*(z - x[i]);
         return s_i;
     }
-	// public double derivative(double z){/* evaluate the derivative */}
-	// public double integral(double z){/* evaluate the integral */}
+	public double derivative(double z){
+        int i = binsearch(x,z);
+        double sdot_i = b[i] + 2*c[i] * (z - x[i]);
+        return sdot_i;
+    }
+	// public double integral(double z){
+    //     int i = binsearch(x,z);
+    //     double sdot_i = 
+    // }
 }

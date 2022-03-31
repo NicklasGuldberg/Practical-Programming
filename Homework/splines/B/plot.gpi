@@ -3,5 +3,6 @@ set output 'plot.png'
 set key below
 
 plot 'out.txt' index 0 using 1:2 with points title "Points"
-replot 'out.txt' index 1 using 1:2 with lines title "Quadratic Spline"
+replot 'out.txt' index 1 using 1:2 with lines title "Quadratic Spline $s_i(x)$"
+replot 'out.txt' index 2 using 1:2 with lines title "Derivative of Spline $s_i'(x)$"
 
