@@ -53,19 +53,18 @@ public class cspline{
         for(int i = n-2; i>= 0; i--) b[i] = (B[i] - Q[i] * b[i+1]) / D[i];
         //This should be checked if different with c[0] = 0
         for(int i = 0; i<n-1; ++i){
-            c[i] = (- 2 * b[i] - b[i+1] + 3 * p[i]  )/dx[i];
+            c[i] = (- 2 * b[i] - b[i+1] + 3 * p[i]  )/dx[i]; //This seems to produce c[0] = 0.
             d[i] = (b[i] + b[i+1] - 2 * p[i]) /(dx[i]*dx[i]);
         }
 	}
     
-    
-    /*
 	public double spline(double z){
         //This is just the spline function. It is important that z is restricted to x[0] < z < x[n]
         int i = binsearch(x,z);
-        double s_i = 
+        double s_i = y[i] + b[i] * (z - x[i]) + c[i] * (z-x[i])*(z-x[i]) + d[i] * Pow((z-x[i]), 3); 
         return s_i;
     }
+    /*
 	public double derivative(double z){
         int i = binsearch(x,z);
         double sdot_i = 

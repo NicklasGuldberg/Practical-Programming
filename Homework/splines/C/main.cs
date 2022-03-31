@@ -20,10 +20,10 @@ class main{
         WriteLine();
         // Two empty lines for another plot
         cspline cs = new cspline(x,y);
-        // WriteLine($"{cs.x[1]}");
-        // for(double i = cs.x[0]; i<cs.x[cs.n-1]; i += 0.01){
-        //     WriteLine($"{i} {cs.spline(i)}");
-        // }
+        // WriteLine($"{cs.c[2]}");
+        for(double i = cs.x[0]; i<cs.x[cs.n-1]; i += 0.01){
+            WriteLine($"{i} {cs.spline(i)}");
+        }
         /*
         WriteLine();
         WriteLine();
