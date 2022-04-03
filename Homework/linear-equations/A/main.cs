@@ -16,23 +16,27 @@ class main{
                 A[i,j] = rnd.Next(min,max);
             }
         }
-        var I = new matrix(m,m);
+        var I = new matrix(n,n);
         I.set_unity();
         var QR = new QRGS(A);
-        Write("R =");
-        QR.R.print();
-        Write("Q =");
-        QR.Q.print();
-        var B = QR.Q.transpose()*QR.Q;
-        B.print();
-        WriteLine($"Q^T * Q = 1: {I.approx(QR.Q.transpose()*QR.Q)}");
-        WriteLine($"Q * R = A: {A.approx(QR.Q * QR.R)}");
         vector b = new vector(n);
         for(int i = 0; i < n; ++i){
             b[i] = rnd.Next(min,max);
         }
         vector x = QR.solve(b);
+        matrix B = QR.inverse();
+        Write("A =");
+        A.print();
+        Write("R =");
+        QR.R.print();
+        Write("Q =");
+        QR.Q.print();
+        Write("B =");
+        B.print();
+
+        WriteLine($"Q^T * Q = 1: {I.approx(QR.Q.transpose()*QR.Q)}");
+        WriteLine($"Q * R = A: {A.approx(QR.Q * QR.R)}");
         WriteLine($"A * x = b: {b.approx(A*x)}");
-        
+        WriteLine($"A*B = I: {I.approx(A*B)}");
    }    
 }

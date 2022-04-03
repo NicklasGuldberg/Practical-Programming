@@ -37,6 +37,15 @@ public class QRGS{
         }
         return y;
     }
+    public matrix inverse(){
+        var I = new matrix(n,n);
+        I.set_unity();
+        matrix Ainv = new matrix(n,n);
+        for(int i = 0; i<n; ++i){
+            Ainv[i] = this.solve(I[i]);
+        }
+        return Ainv;
+    }
 	// public matrix inverse(){/* return the inverse matrix (part B) */}
 	// public double determinant(){/* return ΠiRii */}
 }
