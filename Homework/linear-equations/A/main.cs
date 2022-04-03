@@ -37,6 +37,5 @@ class main{
         WriteLine($"Q^T * Q = 1: {I.approx(QR.Q.transpose()*QR.Q)}");
         WriteLine($"Q * R = A: {A.approx(QR.Q * QR.R)}");
         WriteLine($"A * x = b: {b.approx(A*x)}");
-        WriteLine($"A*B = I: {I.approx(A*B)}");
    }    
 }
