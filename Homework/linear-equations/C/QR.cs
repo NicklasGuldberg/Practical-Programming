@@ -20,18 +20,20 @@ public class QRGS{
 	public QRGS(matrix A){
         n = A.size1;
         m = A.size2;
-        vector[] a = new vector[m]; // m is the number of vectors - not the size of each vector!
-        vector[] q = new vector[m];     
+        // vector[] a = new vector[m]; // m is the number of vectors - not the size of each vector!
+        // vector[] q = new vector[m];     
         Q = new matrix(n,m);
         R = new matrix(n,m);
-        for(int i = 0; i<m; ++i) a[i] = A[i];
+        Q = A.copy();
+        // for(int i = 0; i<m; ++i) a[i] = A[i];
         for(int i = 0; i<m; ++i){
-            q[i] = a[i]/a[i].norm();
+            R[i,i] = Q[i].norm();
+            Q[i] /= R[i,i];
             for(int j=i+1; j<m; ++j){
-                a[j] = a[j] - q[i]%a[j] * q[i];
+                // a[j] = a[j] - q[i]%a[j] * q[i];
+                R[i,j] = Q[i].dot(Q[j]);
+                Q[j] -= Q[i] * R[i,j];
             }
-            Q[i] = q[i];
-        R = Q.transpose()*A;
         }
     }
 	public vector solve(vector b){

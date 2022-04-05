@@ -6,9 +6,9 @@ plot.png : out.txt plot.gpi
 	cat plot.gpi | pyxplot
 
 # Format is E - real  U - user S - system
-out.txt: #main.exe makefile
-	# > out.txt
-	for N in {5..600..5}; do\
+out.txt: main.exe makefile
+	> out.txt
+	for N in {5..700..5}; do\
 		echo -n "$$N " >> out.txt;\
 		/bin/time -f '%E %U %S' -a -o out.txt mono main.exe "$$N";\
 	done
