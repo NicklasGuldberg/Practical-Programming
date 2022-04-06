@@ -8,13 +8,12 @@ class main{
         int n = 10;
         int m = 5;
         matrix A = randomA(n,m);
-        vector b = new vector("1, 1, 1, 1, 1, 1, 1, 1, 1, 1");
         var I = new matrix(5,5);
         I.set_unity();
         var QR = new QRGS(A);
         WriteLine($"Q^T * Q = 1: {I.approx(QR.Q.transpose()*QR.Q)}");
         WriteLine($"Q * R = A: {A.approx(QR.Q * QR.R)}");
-        var fs = new Func<double,double>[] { z => 1.0, z=> - z}; 
+        var fs = new Func<double,double>[] { z => 1.0, z=> z}; 
         vector x = new vector("1,  2,  3, 4, 6, 9, 10, 13, 15");
         vector y = new vector("117, 100, 88, 72, 53, 29.5, 25.2, 15.2, 11.1");
         vector dy = new vector("5, 5, 5, 5, 5, 1, 1, 1, 1");
@@ -44,16 +43,17 @@ class main{
         data.WriteLine();
 
         for(double xs = 0; xs<16; xs += 0.1){
-            data.WriteLine($"{xs} {Exp(fit.f(xs) + Sqrt(fit.Cov[0,0]) * fs[0](xs) - Sqrt(fit.Cov[1,1]) * fs[1](xs))} {0}");
+            data.WriteLine($"{xs} {Exp((fit.c[0] + Sqrt(fit.Cov[0,0])) * fs[0](xs) + (fit.c[1] + Sqrt(fit.Cov[1,1])) * fs[1](xs) )} {0}");
         }
 
         data.WriteLine();
         data.WriteLine();
 
         for(double xs = 0; xs<16; xs += 0.1){
-            data.WriteLine($"{xs} {Exp(fit.f(xs) - Sqrt(fit.Cov[0,0]) * fs[0](xs) + Sqrt(fit.Cov[1,1]) * fs[1](xs))} {0}");
+            data.WriteLine($"{xs} {Exp((fit.c[0] - Sqrt(fit.Cov[0,0])) * fs[0](xs) + (fit.c[1] - Sqrt(fit.Cov[1,1])) * fs[1](xs) )} {0}");
         }
         data.Close();
-        fit.Cov.print();
+        // fit.Cov.print();
+        //It seems that changing the function from z => -z to z => z fixes the stuff for some reason
    }    
 }
