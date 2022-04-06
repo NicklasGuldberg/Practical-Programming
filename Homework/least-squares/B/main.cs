@@ -26,8 +26,9 @@ class main{
         }
         var fit = new linfit(x,lny,fs,dlny);
         fit.c.print("c =");
-        WriteLine($"The lifetime of ThX as determined by the fit is: t½ = {Log(2)/fit.c[1]} days");
+        WriteLine($"The lifetime of ThX as determined by the fit is: t½ = {Log(2)/fit.c[1]} +- {Log(2)/(fit.c[1]*fit.c[1])*Sqrt(fit.Cov[1,1])} days");
         WriteLine("According to wikipedia ThX (Ra-224) has half life of: t½ = 3.6319");
+        WriteLine("The fitted half life is not within uncertainties of the lit half life");
 
         var data = new System.IO.StreamWriter("data.txt");
         for(int i = 0; i<x.size; ++i){
@@ -41,6 +42,5 @@ class main{
         }
         
         data.Close();
-        fit.Cov.print();
    }    
 }

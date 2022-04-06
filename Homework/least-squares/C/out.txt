@@ -1,5 +1,5 @@
 Q^T * Q = 1: True
 Q * R = A: True
 c =      4.95     -0.172 
-The lifetime of ThX as determined by the fit is: t½ = -4.02826740426001 days
+The lifetime of ThX as determined by the fit is: t½ = 4.02826740426001 days
 According to wikipedia ThX (Ra-224) has half life of: t½ = 3.6319
