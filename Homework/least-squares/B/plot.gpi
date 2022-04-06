@@ -1,0 +1,6 @@
+set terminal png
+set output 'plot.png'
+set xlabel "Time, $t$ [days]"
+set ylabel "Activity, $y$ [rel. units]"
+plot "data.txt" using 1:2:3 index 0 with yerrorbars title "data"
+replot "data.txt" using 1:2 index  1 with lines title "$F_{\vec{c}} (x)$"
