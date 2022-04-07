@@ -233,7 +233,7 @@ public bool approx(matrix B,double acc=1e-6, double eps=1e-6){
 	return true;
 }
 // Added functionality below by Nicklas Guldberg
-public static matrix randomA(int n=5, int m=5, int min = 0, int max= 10){
+	public static matrix randomA(int n=5, int m=5, int min = 0, int max= 10){
         Random rnd = new Random();
         matrix A = new matrix(n,m);
         for(int i = 0; i<n; i++){
@@ -243,5 +243,18 @@ public static matrix randomA(int n=5, int m=5, int min = 0, int max= 10){
         }
         return A;
     }
+
+	public static matrix randomsymA(int n=5, int min = 0, int max= 10){
+        Random rnd = new Random();
+        matrix A = new matrix(n,n);
+        for(int i = 0; i<n; i++){
+            for(int j = 0; j<i+1; j++){
+                A[i,j] = rnd.Next(min,max);
+				A[j,i] = A[i,j];
+            }
+        }
+        return A;
+	}
+	
 }//matrix
 
