@@ -27,9 +27,9 @@ class main{
         WriteLine($"V * V^T = I : {I.approx(V*V.transpose())}");
         WriteLine($"A * V[0] = D[0,0] V[0]: {(D[0,0] * V[0]).approx(A*V[0])}");
         // data.Close();
-        var AV = A*V[0];
-        AV.print();
-        var DV = D[0,0] * V[0];
-        DV.print();
+        // var AV = A*V[0];
+        // AV.print();
+        // var DV = D[0,0] * V[0];
+        // DV.print();
    }    
 }
