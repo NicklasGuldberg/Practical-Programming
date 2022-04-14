@@ -1,4 +1,4 @@
-MATHDIR = ../../MathLib
+MATHDIR = ../../../MathLib
 
 # plot.png : plot.gpi out.txt
 	# cat out.txt | pyxplot
