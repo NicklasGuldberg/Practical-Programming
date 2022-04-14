@@ -1,0 +1,13 @@
+set terminal png
+set output 'plot.png'
+set ylabel "Time, $t$ [milliseconds]"
+set xlabel "$n$"
+set key top left
+f(x) = a1 * x *x*x + a3
+g(x) = b1 * x *x*x + b3
+fit f() withouterrors "out.txt" using 1:2 index 0 via a1, a3
+plot "out.txt" using 1:2 index 0 with points title "Original algorithm"
+replot f(x) with lines title "$n^3$ fit original algorithm from A)"
+replot "out.txt" using 1:2 index 1 with points title "Updated algorithm"
+fit g() withouterrors "out.txt" using 1:2 index 1 via b1, b3
+replot g(x) with lines title "$n^3$ fit updated algorithm from A)"
