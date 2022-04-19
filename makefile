@@ -1,7 +1,7 @@
 MATHDIR = ../../../MathLib
 
 # plot.png : plot.gpi out.txt
-	# cat out.txt | pyxplot
+	# cat plot.gpi | pyxplot
 
 out.txt : main.exe
 	mono main.exe > $@
