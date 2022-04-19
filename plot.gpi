@@ -1,0 +1,6 @@
+set terminal png
+set output 'plot.png'
+set key top left
+set xlabel ''
+set ylabel ''
+plot 'out.txt' using 1:2 with line title ""
