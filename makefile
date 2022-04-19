@@ -14,5 +14,5 @@ matlib.dll: $(MATHDIR)/ode.cs $(MATHDIR)/vector.cs $(MATHDIR)/integrate.cs $(MAT
 	mcs -target:library -out:./$@ $^
 
 clean:
-	rm -f *.txt *.exe *.dll
+	rm -f *.txt *.exe *.dll *.png
 
