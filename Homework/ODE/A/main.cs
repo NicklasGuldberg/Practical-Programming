@@ -24,12 +24,18 @@ class main{
         for(int i = 0; i<N; ++i){
             double x = 2*PI * i/N;
             vector y = ODE.driver(f,0,ya,x);
-            WriteLine($"{x}, {y[0]}");
+            WriteLine($"{x}, {y[0]}, {0}");
         }
         WriteLine();
         WriteLine();
 
-        //Example from 
+        //Example from scipy.integrate.odeint manual
+        vector y0 = new vector(PI - 0.1, 0.0);
+        for(int i = 0; i<101; ++i){
+            double t = i/101.0*10;
+            vector y = ODE.driver(pend,0,y0,t);
+            WriteLine($"{t}, {y[0]}, {y[1]}");
+        } 
         
    }    
 }
