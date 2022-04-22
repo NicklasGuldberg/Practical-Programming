@@ -1,0 +1,4 @@
+integrate(Sqrt(x),0,1) = 2/3: True to 4 decimal places
+integrate(1/Sqrt(x),0,1) = 2: True to 4 decimal places
+integrate(4.0*Sqrt(1 - x*x),0,1) = PI: True to 4 decimal places
+integrate(Log(x)/Sqrt(x),0,1) = -4: True to 4 decimal places
