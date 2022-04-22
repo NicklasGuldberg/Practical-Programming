@@ -14,5 +14,13 @@ class main{
         WriteLine($"integrate(1/Sqrt(x),0,1) = 2: {approx(integrate(f, 0,1),2, 1e-4)} to 4 decimal places");
         WriteLine($"integrate(4.0*Sqrt(1 - x*x),0,1) = PI: {approx(integrate(g, 0.0,1.0),PI, 1e-4)} to 4 decimal places");
         WriteLine($"integrate(Log(x)/Sqrt(x),0,1) = -4: {approx(integrate(h, 0,1),-4, 1e-4)} to 4 decimal places");
+
+        //Error function in integral form
+        Func<double,double> erfint = delegate(double x){return 2.0/Sqrt(PI) * Exp(- x*x);};
+        var data = new System.IO.StreamWriter("data.txt");
+        for(double x = -3; x<=3; x += 0.01){
+            data.WriteLine($"{x}, {integrate(erfint, 0, x)}");
+        }
+        data.Close();
    }    
 }

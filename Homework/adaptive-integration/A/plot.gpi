@@ -1,0 +1,7 @@
+set terminal png
+set output 'plot.png'
+set key top left
+set xlabel '$z$'
+set ylabel '$\mathrm{erf} z$'
+plot 'data.txt' using 1:2 with lines title "Numerical integrated"
+replot 'erf.dat' using 1:2 with lines title "Tabulated data"
