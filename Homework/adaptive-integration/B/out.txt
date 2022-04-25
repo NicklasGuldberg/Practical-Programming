@@ -1,0 +1,11 @@
+ccquad(1/Sqrt(x),0,1) = 2: True to 4 decimal places
+ccquad(Log(x)/Sqrt(x)) = -4: True to 4 decimal places
+integrate(1/Sqrt(x),0,1) = 2: True to 4 decimal places
+integrate(Log(x)/Sqrt(x)) = -4: True to 4 decimal places
+
+To integrate 1/Sqrt(x), the Clenshaw-Curtis routine called the function 24 times
+To integrate 1/Sqrt(x), the normal routine called the function 8576 times
+To integrate Log(x)/Sqrt(x), the Clenshaw-Curtis routine called the function 128 times
+To integrate Log(x)/Sqrt(x), the normal routine called the function 29212 times
+Scipy integrate.quad(1/sqrt(x)) = 1.9999999999999984. It called the function 231 times.
+Scipy integrate.quad(log(x)/sqrt(x)) = -4.000000000000085. It called the function 315 times.
