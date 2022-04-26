@@ -9,3 +9,5 @@ Now we find the extremum of f(x,y) = (1-x)^2 + 100(y - x^2)^2
 The gradient is gradf(x,y) = (2x + 400x^3 - 400xy -2,  200(y-x^2)) 
 The guess is      x0  =         5          5 
 The solution is [x,y] =         1          1 
+According to wikipedia the correct minimum is (1,1)
+
