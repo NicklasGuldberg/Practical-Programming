@@ -1,0 +1,11 @@
+
+
+Halton quasi-random sequence Monte Carlo integration with N=1000 of f(x,y,z) = x + y + z from [0,0,0] to [1,1,1]
+= 1.49566810599566, with error approximately 0.00656738175868776
+Analytical result should be 3/2
+
+Plain Monte Carlo integration with N=1000 of f(x,y,z) = x + y + z from [0,0,0] to [1,1,1]
+= 1.50237551640923, with error approximately 0.0162778672563465
+Analytical result should be 3/2
+
+We note that the error of the quasi-random is significantly less than the plain integrator
