@@ -125,4 +125,10 @@ public bool approx(vector o){
 	return true;
 	}
 
+public void set_zero(){
+	for(int i=0;i<size;i++){
+		this[i] = 0;
+	}
+}
+
 }//vector
