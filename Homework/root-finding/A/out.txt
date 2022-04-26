@@ -1,0 +1,6 @@
+
+
+As a test we solve the simple system f(x,y) = [x^2 - 2y, y^2 - 3x] 
+The solution is  [x,y] =       2.29       2.62 
+inserting it back into the function gives us f([x,y]) = [0.00186082447501956, 0.00203383366907328] 
+
