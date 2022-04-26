@@ -1,0 +1,10 @@
+
+
+Plain Monte Carlo integration with N=1000 of f(x,y,z) = x + y + z from [0,0,0] to [1,1,1]
+= 1.51767920451597, with error approximately 0.0155674313316715
+Analytical result should be 3/2
+
+Plain Monte Carlo integration with N=100000 of f(x,y,z) = 1/pi^2 * (1 - cos(x)*cos(y)*cos(z))^-1 from [0,0,0] to [pi,pi,pi]
+= 1.39094064697235 with error approximately 0.0150769126474723
+Precise result should be 1.3932039296856768591842462603255
+
