@@ -1,0 +1,34 @@
+set terminal png
+set output 'rmax_convergence.png'
+set key top right
+set grid
+set xlabel '$r_\mathrm{max}$ '
+set ylabel 'Lowest eigenvalue/energy, $E_\mathrm{min}$'
+  plot 'data.txt' index 0 using 1:3 with lines title "$dr = 0.1$"
+replot 'data.txt' index 0 using 1:2 with lines title "$dr = 0.3$"
+replot 'data.txt' index 0 using 1:4 with lines title "$dr = 0.5$"
+replot 'data.txt' index 0 using 1:5 with lines title "$dr = 0.7$"
+
+set terminal png
+set output 'dr_convergence.png'
+set key top left
+set grid
+set xlabel '$dr$'
+set ylabel 'Lowest eigenvalue/energy, $E_\mathrm{min}$'
+  plot 'data.txt' index 1 using 1:3 with lines title "$r_\mathrm{max} = 6$"
+replot 'data.txt' index 1 using 1:2 with lines title "$r_\mathrm{max} = 7$"
+replot 'data.txt' index 1 using 1:4 with lines title "$r_\mathrm{max} = 8$"
+replot 'data.txt' index 1 using 1:5 with lines title "$r_\mathrm{max} = 10$"
+
+set terminal png
+set output 'eigenvalues.png'
+set key below
+set xlabel '$r$'
+set ylabel '$\psi(r)$'
+  plot 'data.txt' index 2 using 1:2 with lines title "numerical $\psi_0$"
+replot 'data.txt' index 2 using 1:3 with lines title "numerical $\psi_1$"
+replot 'data.txt' index 2 using 1:4 with lines title "numerical $\psi_2$"
+replot 'data.txt' index 3 using 1:2 with lines lt 23 title "$rR_{10}(r)$"
+replot 'data.txt' index 3 using 1:3 with lines lt 23 title "$rR_{20}(r)$"
+replot 'data.txt' index 3 using 1:4 with lines lt 23 title "$rR_{30}(r)$"
+ 
