@@ -21,9 +21,10 @@ class epsilon{
 		double tiny = epsilon/2;
 		double sumA1 = 1 + tiny + tiny + tiny + tiny;
 		double sumB1 = tiny + tiny + tiny + tiny + 1;
-		WriteLine($"sumA - 1 = {sumA1-1}");
-		WriteLine($"sumB - 1 = {sumB1-1}");
-		
+		// WriteLine($"sumA - 1 = {sumA1-1}");
+		// WriteLine($"sumB - 1 = {sumB1-1}");
+		WriteLine("\n");
+
 		int n=(int)1e6;			//(int) converts the double 1e6 to an integer - cannot be left out
 		double sumA=0,sumB=0;
 
@@ -32,11 +33,16 @@ class epsilon{
 
 		for(int k=0;k<n;k++){sumB+=tiny;} sumB+=1;
 		WriteLine($"sumB-1 = {sumB-1:e} should be {n*tiny:e}");
+		WriteLine("The discrepency is explained by the fact that 'tiny' is less than the difference between 1 and the next representable floating point number,\n");
+		WriteLine("thus if 1 + tiny = 1. In contrast adding a bunch of 'tiny's sums to something larger than the difference between 1 and the next");
+		WriteLine("representable number and it can then be added to 1 and it works fine.");
+		WriteLine("\n");
 		/*	The machine epsilon is the smallest number the machine is able to add to 1. 
 			Tiny is less than epsilon and as such 1 + tiny = 1. 
 			This should be obvious from the way we constructed epsilon
 		*/
-		WriteLine($"approx virker, hvis approx(1,1) = {approx(1,1)} og approx(1,2) = {approx(1,2)}");
+		WriteLine($"approx virker, hvis approx(1,1) = {approx(1,1)} - true");
+		WriteLine($"og approx(1,2) = {approx(1,2)} - false");
 	}
 	static bool approx(double a, double b, double tau=1e-9, double epsilon=1e-9){
 		double diff = Abs(a - b);

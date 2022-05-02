@@ -1,0 +1,20 @@
+Maximum representable integer is 2147483647
+int.MaxValue is 2147483647
+Minimum representable integer is -2147483648
+int.MinValue is -2147483648
+The machine epsilon for doubles is 2.22044604925031E-16
+compared to 2^(-52) = 2.22044604925031E-16
+The machine epsilon for floats is 1.192093E-07
+compared to 2^(-23) = 1.19209289550781E-07
+
+
+sumA-1 = 0.000000e+000 should be 1.110223e-010
+sumB-1 = 1.110223e-010 should be 1.110223e-010
+The discrepency is explained by the fact that 'tiny' is less than the difference between 1 and the next representable floating point number,
+
+thus if 1 + tiny = 1. In contrast adding a bunch of 'tiny's sums to something larger than the difference between 1 and the next
+representable number and it can then be added to 1 and it works fine.
+
+
+approx virker, hvis approx(1,1) = True - true
+og approx(1,2) = False - false
