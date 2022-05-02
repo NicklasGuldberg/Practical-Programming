@@ -3,5 +3,5 @@ set output 'divplot.pdf'
 set key left
 set xlabel '$x$'
 ex(x) = 1+x*(1+x/2*(1+x/3*(1+x/4*(1+x/5*(1+x/6*(1+x/7*(1+x/8*(1+x/9*(1+x/10)))))))))
-plot ex(x)
+plot ex(x) with title "$\mathrm{ex}(x)$ - without recursion for large $x$"
 replot [0:10][:] exp(x)
