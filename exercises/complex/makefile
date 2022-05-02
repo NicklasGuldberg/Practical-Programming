@@ -2,6 +2,7 @@
 
 Out.txt : main.exe
 	mono main.exe > Out.txt
+	cat Out.txt
 
 main.exe : main.cs cmath.dll
 	mcs -reference:cmath.dll main.cs
