@@ -11,6 +11,9 @@ class main{
         System.Func<double,double> f = delegate(double x){return Sin(k*x);};
         for (int i=1; i<=3; i++){
             k = i;
+            WriteLine("----------------------------");
+            WriteLine($"Table of f(x) = sin({k}*x)");
+            WriteLine("x  |  f(x)");
             make_table(f,a,b,dx);
         } 
     }
