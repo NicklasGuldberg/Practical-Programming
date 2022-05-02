@@ -1,3 +1,0 @@
-      -0.5 
-
-With rmax = 8,  epsguess = -0.99
