@@ -12,7 +12,7 @@ sumA-1 = 0.000000e+000 should be 1.110223e-010
 sumB-1 = 1.110223e-010 should be 1.110223e-010
 The discrepency is explained by the fact that 'tiny' is less than the difference between 1 and the next representable floating point number,
 
-thus if 1 + tiny = 1. In contrast adding a bunch of 'tiny's sums to something larger than the difference between 1 and the next
+thus 1 + tiny = 1. In contrast adding a bunch of 'tiny's sums to something larger than the difference between 1 and the next
 representable number and it can then be added to 1 and it works fine.
 
 

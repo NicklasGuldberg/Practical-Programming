@@ -34,7 +34,7 @@ class epsilon{
 		for(int k=0;k<n;k++){sumB+=tiny;} sumB+=1;
 		WriteLine($"sumB-1 = {sumB-1:e} should be {n*tiny:e}");
 		WriteLine("The discrepency is explained by the fact that 'tiny' is less than the difference between 1 and the next representable floating point number,\n");
-		WriteLine("thus if 1 + tiny = 1. In contrast adding a bunch of 'tiny's sums to something larger than the difference between 1 and the next");
+		WriteLine("thus 1 + tiny = 1. In contrast adding a bunch of 'tiny's sums to something larger than the difference between 1 and the next");
 		WriteLine("representable number and it can then be added to 1 and it works fine.");
 		WriteLine("\n");
 		/*	The machine epsilon is the smallest number the machine is able to add to 1. 
