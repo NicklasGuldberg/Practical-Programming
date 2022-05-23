@@ -10,6 +10,3 @@ log(i) = 0+1.57i
 log(i) = pi/2*i is True
 sin(i*pi) = 0+11.5i
 sin(i*pi) = i*sinh(pi) is True
-sinh(i) = -0.841+0i
-sinh(i) = i*sin(1) is False
-cosh(i) = 0.54+0i
