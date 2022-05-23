@@ -21,7 +21,7 @@ class main{
         WriteLine($"sqrt(i) = {b}");
         WriteLine($"exp(i) = {c}");
         WriteLine($"exp(i*pi) = {d}");
-        WriteLine($"-1 = {d} is {d.approx(-1)}");
+        WriteLine($"-1 = exp(i*pi) is {d.approx(-1)}");
         WriteLine($"i^i = {e}");
         WriteLine($"i^i = exp(- pi/2) is {e.approx(Exp(-PI/2.0))}");
         WriteLine($"log(i) = {f}");
@@ -30,7 +30,7 @@ class main{
         WriteLine($"sin(i*pi) = i*sinh(pi) is {g.approx(I*Sinh(PI))}");
         // WriteLine($"sinh(i) = {h}");
         // WriteLine($"sinh(i) = i*sin(1) is {h.approx(I*sin(1))}");
-        // WriteLine($"cosh(i) = {i}");
+        // WriteLine($"cosh(i) = {i}"); 
 
     }
 }
