@@ -1,3 +1,18 @@
-Hello World
-vopt =         1          1 
-grad(vopt) = -9.79e-06  -1.84e-06 
+
+Rosenbrock's valley function
+-------------------------
+f(x,y) = (1-x)^2 + 100(y-x^2)^2
+Start guess: (x0,y0)	=          0          0 
+Minimum found at (x,y)	=          1          1 
+Steps taken: 6755
+According to wikipedia minimum should be at (x,y) = (1,1)
+------------------------
+
+Himmelblau's function
+-------------------------
+g(x,y) = (x^2 + y - 11)^2 + (x + y^2 - 7)^2
+Start guess: (x0,y0)	=          0          0 
+Minimum found at (x,y)	=          3          2 
+Steps taken: 18
+According to wikipedia minimum exist at (x,y) = (3,2), (-2.805, 3.131), (-3.779,-3.283) and (3.584,-1.848)
+------------------------
