@@ -17,21 +17,21 @@ public static class minimizer{
 		return num/denom;
 	}
 
-	static vector gradient(Func<vector,double> f, vector x){  	
+	public static vector gradient(Func<vector,double> f, vector x){  	
 		//Computes a numerical gradient
 		int n = x.size;
 		vector df = new vector(n);
 		vector dx = new vector(n);
 		dx.set_zero();
 		for(int i = 0; i<n; ++i){
-			dx[i] = x[i]*Pow(2,-26); 
+			dx[i] = Min(Abs(x[i])*Pow(2,-26), Pow(2,-27)); 
 			df[i] = (f(x + dx) - f(x))/ dx[i];
 			dx[i] = 0;
 		}
 		return df;
 	}
 
-	public static vector qnewton(Func<vector,double> f, vector start, double acc=0.001){
+	public static vector qnewton(Func<vector,double> f, vector start, double acc=0.0001){
 		int n = start.size;
 		matrix B = new matrix(n,n);
 		B.set_unity();
@@ -42,7 +42,7 @@ public static class minimizer{
 		do{
 			deltax = -B * df;
 			double lambda = 1;
-			while( !(f(x + lambda* deltax) < f(x)) & lambda > 1.0/32){
+			while( !(f(x + lambda* deltax) < f(x)) & lambda > 0.001){
 				lambda *= 0.5;
 			};
 			vector s = lambda*deltax; //This is the step
@@ -51,16 +51,15 @@ public static class minimizer{
 				//now for the update
 				B += SR1(f,x,s,B,df); 
 				x += s; //This step needs to be done last so not to interfere with the update of B
+				df = gradient(f,x);
 			} else {
 				x += s;
 				B.set_unity();
 				df = gradient(f,x); //This is done last df is not updated at the start of the while loop.
 			}
-		} while(df.norm()<acc);
-
-    	    vector a = new vector(0,0);
-    	    return a;
-    	}
+		} while(df.norm()>acc);
+		return x;
+	}
 
 
 
