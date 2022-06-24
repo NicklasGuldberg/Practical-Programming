@@ -1,0 +1,7 @@
+set terminal png
+set output 'plot.png'
+set key top left
+set xlabel ''
+set ylabel ''
+plot 'halton.txt' using 1:2 with dots title "Halton sequence"
+
