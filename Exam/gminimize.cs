@@ -24,23 +24,26 @@ public static class GlobalMinimizer{
             vmin[i] = v0[2*i];
         }
         vector x = new vector(dim);
-        vector xp = new vector(dim); //previous x
+        // vector xp = new vector(dim); //previous x
         vector optstart = new vector(dim); //optimal start guess  - or at least the best one achieved from the sampling
         for(int i = 0; i<N; ++i){
             halton(i, x); //I made halton void in the monte-carlo homework. 
             for(int j = 0; j<dim; ++j){
                 x[j] = x[j] * (vmax[j] - vmin[j]) + vmin[j];
             }
-
-            if(i>0){
-                if(f(xp)>f(x)){
+            if(i == 0){
+                optstart = x.copy();
+            } else{
+                if(f(optstart)>f(x)){
+                    WriteLine($"f(x) = {f(x)}, f(optstart) = {f(optstart)}");
                     optstart = x.copy(); 
                 }
+                // else WriteLine("Not better");
             }
             // We skip the first one as there is no comparison to be made.
 
             // WriteLine($"{x[0]}, {x[1]}"); //This allows me to test print the distribution of points.
-            xp = x.copy(); 
+            // xp = x.copy(); 
         }
         (vector res, int steps) = qnewton(f, optstart, acc);
         return (res,optstart, steps);

@@ -5,6 +5,7 @@ using static System.Math;
 using static matrix;
 using static MCintegrator;
 using static GlobalMinimizer;
+using static minimizer;
 class main{
     static void Main(){
     // int N = 1000;
@@ -19,11 +20,20 @@ class main{
 		double y = v[1];
 		return Pow((1-x),2) + 100*Pow(y-x*x,2);
 	};
+    Func<vector, double> g = delegate(vector v){
+        double x = v[0];
+        double y = v[1];
+        return x + y;
+    };
 
-        vector v0 = new vector("0.75, 1.25, 0.75, 1.25");
-        (vector xmin, vector optstart, int steps) = hmin(f, v0,1000);
+        vector v0 = new vector("-2, 2, -2, 2");
+        vector start = new vector(0.0,0.0);
+        (vector xmin, vector optstart, int steps) = hmin(f, v0,10000, 0.0001);
+        (vector xmin1, int steps1) = qnewton(f, start, 0.0001);
         optstart.print("optstart =");
         xmin.print("xmin =");
         WriteLine($"steps = {steps}");
+        xmin1.print("xmin =");
+        WriteLine($"steps = {steps1}");
    }    
 }
