@@ -1,0 +1,13 @@
+x = 1, y = 2, z = 3
+x = 1, y = 2, z = 0
+r = [1, 2, 3]
+[1, 2, 3]
+r2 = [1, 2, 0]
+a = [3, 4, 0]
+b = [-1, 6, 0]
+The vector product of a and b is [0, 0, 18]
+The vector product of a and b is [0, 0, 18]
+The dot product of a and b is 21 = 21
+The length of a is 5 = 5
+This should return true = True
+This should return false = False
