@@ -44,11 +44,11 @@ public static class minimizer{
 			++steps;
 			deltax = -B * df;
 			double lambda = 1;
-			while( lambda > Pow(2,-10) & !(f(x + lambda* deltax) < f(x)) ){
+			while( lambda > Pow(2,-36) & !(f(x + lambda* deltax) < f(x)) ){
 				lambda *= 0.5;
 			};
 			vector s = lambda*deltax; //This is the step
-			if (lambda > Pow(2,-10)) {
+			if (lambda > Pow(2,-36)) {
 				//if lambda is not too small and f(x + lambda*deltax) < f(x) we get to here
 				//now for the update
 				B += SR1(f,x,s,B,df); 

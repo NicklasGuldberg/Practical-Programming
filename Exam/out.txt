@@ -1,14 +1,68 @@
-f(x) = 45.4444444444444, f(optstart) = 3609
-f(x) = 15.1111111111111, f(optstart) = 45.4444444444444
-f(x) = 2.33352757415981, f(optstart) = 15.1111111111111
-f(x) = 0.261399182908478, f(optstart) = 2.33352757415981
-f(x) = 0.155290300579662, f(optstart) = 0.261399182908478
-f(x) = 0.0677719590224405, f(optstart) = 0.155290300579662
-f(x) = 0.0656915256851457, f(optstart) = 0.0677719590224405
-f(x) = 0.0034812350711559, f(optstart) = 0.0656915256851457
-f(x) = 0.000420701465644112, f(optstart) = 0.0034812350711559
-optstart =     0.998      0.994 
-xmin =         1          1 
-steps = 4403
-xmin =         1          1 
-steps = 6755
+
+Rosenbrock's valley function
+---------------------------------------------------------------
+	 f(x,y) = (1-x)^2 + 100(y-x^2)^2
+The function is sampled for 1 second(s) in the range:
+-2 < x < 2
+-1 < y < 3
+In total 1553842 points were sampled
+The best point found was at      0.995      0.989 
+Quasi-newton minimizer determined minimum at          1          1 
+Number of steps taken is 5197
+
+For comparison a start guess at         0          0 
+produces a minimum found at          1          1 
+after 9159 steps.
+According to wikipedia the minimum should be at f(1,1) = 0
+---------------------------------------------------------------
+
+Ackley function
+---------------------------------------------------------------
+	 f(x,y) = - 20 * Exp(- 0.2*Sqrt(0.5 * (x^2+ y^2))) - Exp(0.5 * (Cos(2*PI*x) + Cos(2*PI*y))) + e + 20
+The function is sampled for 1 second(s) in the range:
+-5 < x < 5
+-5 < y < 5
+In total 1011775 points were sampled
+The best point found was at   -0.00232   0.000279 
+Quasi-newton minimizer determined minimum at  -7.45e-09  -7.45e-09 
+Number of steps taken is 1400
+
+For comparison a start guess at         1          1 
+produces a minimum found at  -7.45e-09  -7.45e-09 
+after 2398 steps.
+According to wikipedia the minimum should be at f(0, 0) = 0
+---------------------------------------------------------------
+
+Three-hump camel function
+---------------------------------------------------------------
+	 f(x,y) = 2*x^2 - 1.05*x^4 + x^6/6 + x*y y^2
+The function is sampled for 1 second(s) in the range:
+-5 < x < 5
+-5 < y < 5
+In total 161288 points were sampled
+The best point found was at    0.00641    0.00246 
+Quasi-newton minimizer determined minimum at   8.44e-06  -4.03e-05 
+Number of steps taken is 3
+
+For comparison a start guess at         1          1 
+produces a minimum found at   3.42e-06   1.14e-05 
+after 12 steps.
+According to wikipedia the minimum should be at f(0, 0) = 0
+---------------------------------------------------------------
+
+Easom function
+---------------------------------------------------------------
+	 f(x,y) = - Cos(x) * Cos(y) * Exp(- ((x-PI)^2 + (y-PI)^2))
+The function is sampled for 1 second(s) in the range:
+0 < x < 6
+0 < y < 6
+In total 1208925 points were sampled
+The best point found was at       3.14       3.14 
+Quasi-newton minimizer determined minimum at       3.14       3.14 
+Number of steps taken is 6
+
+For comparison a start guess at         1          1 
+produces a minimum found at       3.14       3.14 
+after 35 steps.
+According to wikipedia the minimum should be at f(pi,pi) = - 1
+---------------------------------------------------------------
