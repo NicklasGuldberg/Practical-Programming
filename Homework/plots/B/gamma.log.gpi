@@ -1,0 +1,10 @@
+set terminal png 
+set output 'gamma.pyxplot.png' 
+set key top left
+set grid
+set ytics 1
+set xtics 0,0.5,3
+set yrange [0:6.5]
+set xrange [-0.2:3.2]
+plot 'gamma.tabdata.txt' using 1:2 with points pointtype 31 color blue title '$n!$'
+replot 'gamma.data.txt' index 0 using 1:2 with lines color blue linewidth 2 title '$\Gamma(n+1)$'

@@ -1,0 +1,12 @@
+set terminal png 
+set output 'compgamma.pyxplot.png' 
+set key above
+set xlabel '$\Re(z)$'
+set ylabel '$\Im (z)$'
+set xtics -4,2,4
+set ytics -4,2,4
+set ztics 0,1,6
+set size ratio 0.85
+set size zratio 0.70
+set view -40,25
+plot 3d [-4.2:4.2][-4.2:4.2][0:6] 'compgamma.data.txt' using 1:2:3 with surface color white fillcolor navyblue title '$|\mathbf{\Gamma}(z)|$'

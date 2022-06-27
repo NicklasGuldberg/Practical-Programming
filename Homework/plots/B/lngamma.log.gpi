@@ -1,0 +1,5 @@
+set terminal png 
+set output 'lngamma.pyxplot.png' 
+set key top left
+plot 'lngamma.data.txt' index 0 using 1:2 with lines title '$\ln(\Gamma)$' 
+replot 'lngamma.tabdata.txt' using 1:2 with points title 'Tabulated values'
